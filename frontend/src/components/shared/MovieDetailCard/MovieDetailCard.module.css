@@ -1,0 +1,66 @@
+.movieDetail {
+    display: flex;
+    gap: 48px;
+    padding: 24px 24px;
+    color: white;
+    border-radius: 48px;
+    background: rgb(0,0,0);
+    background: linear-gradient(148deg, rgba(0,0,0,1) 28%, rgba(0,6,22,0.918732458803834) 75%, rgba(1,17,29,0.2660713943780637) 100%);
+  }
+  
+  .poster {
+    border-radius: 10px;
+  }
+  
+  .detailsSection {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .genresAndTime {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .genres {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  .runningTime {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  .synopsis {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    background-color: rgba(0, 0, 0, 0.319);
+    padding: 8px;
+  }
+  
+  .castSection {
+    margin-top: 20px;
+  }
+  
+  .castList {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .castList li {
+    margin-right: 15px;
+    font-size: 1rem;
+  }
+  

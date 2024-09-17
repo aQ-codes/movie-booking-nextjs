@@ -1,0 +1,37 @@
+/* Cinemas.module.css */
+.cinemasContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  .cinemaCard {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 15px;
+  }
+  
+  .cinemaDetails {
+    flex: 1;
+  }
+  
+  .showTimes {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .showCard {
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    margin-right: 10px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .showCard.selected {
+    background-color: #4CAF50;
+    color: white;
+  }
+  

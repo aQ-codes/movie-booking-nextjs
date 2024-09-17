@@ -1,0 +1,75 @@
+  .formContainer {
+      padding: 20px;
+      width: 500px;
+    }
+  
+  .formTitle {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .input, .sectionInput, .textarea {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .sectionRow {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .addSectionButton {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .addSectionButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .textarea {
+    min-height: 100px;
+  }
+  
+  .submitButton {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submitButton:hover {
+    background-color: #218838;
+  }
+  
+  .errorMessage, .successMessage {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .errorMessage {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  .successMessage {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  
