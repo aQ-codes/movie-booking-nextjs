@@ -82,13 +82,22 @@
 
 .btn:active {
   transform: scale(1); 
-  
 }
 
 .btn.add{
   width: auto;
   margin-left: auto;
   padding: 8px 8px;
+}
+
+.btn.signin{
+  background-color: transparent;
+  border: 2px solid var(--primary);
+}
+
+.btn.signin:hover{
+  background-color: #0c83de;
+
 }
 
 .btn.green{

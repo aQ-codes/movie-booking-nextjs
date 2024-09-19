@@ -10,8 +10,8 @@ const initializeRoutes = (app) => {
   app.use('/api/admin', adminRoutes);
   // app.use('/api/user', userRoutes);
   app.use('/api/movies', movieRoutes);
-  app.use('/api/cinemas', cinemasRoutes);
   app.use('/api/cinemas/screens', screenRoutes);
+  app.use('/api/cinemas', cinemasRoutes);
   app.use('/api/shows', showRoutes);
   app.use('/api/bookings', bookingRoutes);
 };

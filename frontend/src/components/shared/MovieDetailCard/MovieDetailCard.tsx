@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getMovieDetails } from '@/axiosRequests/axiosRequests';
 import Image from 'next/image'; // Import Next.js Image component
 import styles from './MovieDetailCard.module.css';
+import Link from 'next/link';
 
 interface MovieDetailProps {
   movieId: string;
@@ -57,8 +58,14 @@ const MovieDetail: React.FC<MovieDetailProps> = ({ movieId }) => {
       <div className={styles.detailsSection}>
         <h1 className={styles.title}>{movie?.title}</h1>
         <div className={styles.genresAndTime}>
-          <span className={styles.genres}>{movie?.genres.join(', ')}</span>
-          <span className={styles.runningTime}>{movie?.runningTime} mins</span>
+          <div className={styles.genres}>
+            {movie?.genres.map((genre, index) => (
+              <span key={index} className={styles.genre}>
+                {genre}
+              </span>
+            ))}
+          </div>
+          <span className={styles.runningTime}>{movie?.runningTime} minutes</span>
         </div>
         <p className={styles.synopsis}>{movie?.synopsis}</p>
         <div className={styles.castSection}>
@@ -69,6 +76,9 @@ const MovieDetail: React.FC<MovieDetailProps> = ({ movieId }) => {
             ))}
           </ul>
         </div>
+        <Link href="#" className={styles.btn}>
+            Book Now
+        </Link>
       </div>
     </div>
   );

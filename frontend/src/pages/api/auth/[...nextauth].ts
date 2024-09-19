@@ -6,7 +6,7 @@ console.log("GOOGLE_CLIENT_ID:", process.env.GOOGLE_CLIENT_ID);
 console.log("GOOGLE_CLIENT_SECRET:", process.env.GOOGLE_CLIENT_SECRET);
 
 export default NextAuth({
-  
+
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
@@ -25,7 +25,7 @@ export default NextAuth({
       console.log("token:", token);
       // Ensure that session.user is defined before assigning properties to it
       if (session.user) {
-        // Assign the user's ID to the session, providing a fallback to an empty string
+      // Assign the user's ID to the session, providing a fallback to an empty string
         session.user.id = token.sub || "";  // Fallback if token.sub is undefined
       }
       return session;

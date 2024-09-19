@@ -5,6 +5,7 @@ import { addScreen } from "../repositories/screenRepository.js";
 export const addScreenController = async (req, res) => {
     try {
       const screenData = req.body; // Extract screen data from the request body
+      screenData.seatArrangement = screenData.seatArrangement.replace(/\s+/g, '');
       const newScreen = await addScreen(screenData); // Use the repository to add the screen
       res.status(201).json(newScreen); // Respond with the newly created screen
     } catch (error) {

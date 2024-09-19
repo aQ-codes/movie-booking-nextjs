@@ -32,6 +32,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/(user)/(modules)/auth/assets/loginAsset/components/ui/UserLoginBox/GoogleSigninButton.jsx"
-  ],
+, "src/app/(user)/(modules)/(auth)/assets/loginAsset/components/VerifyEmail", "src/app/(user)/(modules)/(auth)/assets/loginAsset/components/EmailOtp/EmailOtp", "src/services/emailService.js"  ],
   "exclude": ["node_modules"]
 }

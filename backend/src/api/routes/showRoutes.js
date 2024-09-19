@@ -2,6 +2,7 @@ import express from "express";
 import { addShowController } from "../module/show/controllers/addShowController.js";
 import { validateShow } from "../module/show/validators/showValidator.js";
 import { getActiveMovieDates } from "../module/show/controllers/getActiveDatesFormovieController.js";
+import { getShowDetailsController, getShowsForCinemaAndDate } from "../module/show/controllers/getShowsController.js";
 // import { getActiveShowsForMovieController } from "../module/show/controllers/getActiveShowsForMovieController.js";
 
 
@@ -12,8 +13,9 @@ router.post('/add', validateShow,addShowController);
 // Edit a show
 // router.put('/:id', addShow); // Route to add a new show 
 
-//get a particular show detail
-// router.get('/:id', showDetail); // Route to get details of a specific show
+// get a particular show detail
+router.get('/get/:showId', getShowDetailsController); 
+
 // router.get('/:id/nested', showDetailNested); // Route to get details of a specific show with nested data
 //get multiple shows based on their status
 // router.get('/all', listShows); // Route to list all shows 
@@ -27,6 +29,9 @@ router.post('/add', validateShow,addShowController);
 //Route to get all the show dates that are active for a particular movie.
 router.get('/active/:movieId/dates', getActiveMovieDates);
 
-//Route to get all 
+//Route to get all the active show times for a particular movie in a cinemas at a given date
+router.get('/active/:movieId/:date/:cinemasId', getShowsForCinemaAndDate);
+
+
 
 export default router;

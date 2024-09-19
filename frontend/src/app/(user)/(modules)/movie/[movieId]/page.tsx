@@ -9,7 +9,6 @@ import ShowCinemas from '../assets/showCinemasAsset/components/ShowCinemas/ShowC
 const Page = () => {
   const params = useParams<{ movieId: string }>();
   const movieId = params?.movieId;
-  console.log(movieId)
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
 
   const handleDateSelect = (selectedDate: string) => {

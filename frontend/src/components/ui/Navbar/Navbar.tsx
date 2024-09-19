@@ -45,7 +45,7 @@ const Navbar = () => {
                             title='Auth'
                             label='Sign In'
                             icon='/assets/icons/user.png'
-                            variant={['btn']}
+                            variant={['btn','signin']}
                             onClick={handleAuthButtonClick}  // Attach click handler
                         />
                     </ul>

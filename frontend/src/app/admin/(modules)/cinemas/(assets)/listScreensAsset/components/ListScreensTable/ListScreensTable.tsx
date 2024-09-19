@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axiosInstance from "@/utils/axiosConfig";
 import Table from "@/components/ui/Table/Table";
 import Button from "@/components/ui/Button";
+import EditScreenModal from "../../../editScreenAsset/components/EditScreenModal";
 import styles from './ListScreensTable.module.css';
 
 interface Section {
@@ -25,6 +26,8 @@ interface ListScreensTableProps {
 const ListScreensTable: React.FC<ListScreensTableProps> = ({ cinemasId, onAddShow }) => {
   const [screens, setScreens] = useState<Screen[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [editScreenId, setEditScreenId] = useState<string | null>(null);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchScreens = async () => {
@@ -41,7 +44,13 @@ const ListScreensTable: React.FC<ListScreensTableProps> = ({ cinemasId, onAddSho
   }, [cinemasId]);
 
   const handleEdit = (screen: Screen) => {
-    console.log("Edit screen with ID:", screen._id);
+    setEditScreenId(screen._id);
+    setIsEditModalOpen(true);
+  };
+
+  const handleCloseEditModal = () => {
+    setIsEditModalOpen(false);
+    setEditScreenId(null);
   };
 
   const columns = [
@@ -80,6 +89,14 @@ const ListScreensTable: React.FC<ListScreensTableProps> = ({ cinemasId, onAddSho
     <div>
       {error && <div className="error">{error}</div>}
       <Table columns={columns} data={screens} />
+      {isEditModalOpen && editScreenId && (
+        <EditScreenModal
+          isOpen={isEditModalOpen}
+          onClose={handleCloseEditModal}
+          screenId={editScreenId}
+          cinemasId={cinemasId}
+        />
+      )}
     </div>
   );
 };

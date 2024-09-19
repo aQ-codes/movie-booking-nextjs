@@ -23,3 +23,15 @@ export const getScreensByCinemasId = async (cinemasId) => {
     throw new Error('Error fetching screens for the given cinema');
   }
 };
+
+
+// Function to get screen by ID
+export const getScreenDetailsById = async (screenId) => {
+  try {
+      const screen = await Screen.findById(screenId).exec();
+      return screen;
+  } catch (error) {
+      console.error('Error fetching screen:', error);
+      throw new Error('Error fetching screen by ID');
+  }
+};

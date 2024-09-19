@@ -9,29 +9,24 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
+    border-top: 1px solid #cccccc41;  
+    border-bottom: 1px solid #cccccc41; 
     padding: 15px;
+    color: rgb(255, 255, 255);
   }
   
-  .cinemaDetails {
-    flex: 1;
-  }
-  
-  .showTimes {
+  .details {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
   }
-  
-  .showCard {
-    background-color: #f1f1f1;
-    border-radius: 5px;
-    margin-right: 10px;
-    padding: 10px;
-    cursor: pointer;
+
+  .details h3{
+    font-weight: 600;
   }
-  
-  .showCard.selected {
-    background-color: #4CAF50;
-    color: white;
+
+  .details p{
+    font-weight: 600;
+    font-size: 14px;
+    color: #a6a4a4;
   }
   

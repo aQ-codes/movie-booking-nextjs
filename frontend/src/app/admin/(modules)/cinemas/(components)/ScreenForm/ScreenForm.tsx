@@ -13,7 +13,7 @@ interface ScreenFormProps {
     screenType?: string;
     sections?: Section[];
     seatArrangement?: string;
-  };
+  } ;
   onSubmit: (data: {
     screenNumber: number;
     screenType: string;
@@ -25,7 +25,7 @@ interface ScreenFormProps {
 }
 
 const ScreenForm: React.FC<ScreenFormProps> = ({
-  initialData = { sections: [] },
+  initialData = {},
   onSubmit,
   successMessage,
   errorMessage,

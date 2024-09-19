@@ -1,5 +1,6 @@
 .movieDetail {
     display: flex;
+    /* flex-wrap: wrap; */
     gap: 48px;
     padding: 24px 24px;
     color: white;
@@ -10,10 +11,13 @@
   
   .poster {
     border-radius: 10px;
+    width: 360px;
+    /* min-width: 300px; */
+    /* flex: 0 1 auto; */
   }
   
   .detailsSection {
-    flex: 2;
+    /* flex: 0 1 auto; */
     display: flex;
     flex-direction: column;
   }
@@ -21,46 +25,77 @@
   .title {
     font-size: 1.5rem;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   
   .genresAndTime {
     display: flex;
+    flex-direction: column;
     gap: 8px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
+    font-size: 1rem;
+
+  }
+
+  .genres{
+    display: flex;
+    gap: 4px;
+    margin-bottom: 8px;
   }
   
-  .genres {
-    font-size: 1.2rem;
-    color: #666;
+  .genre{
+    color: #000000;
+    background-color: #ffef9f;
+    padding: 4px;
+    border-radius: 4px;
+    font-size: 0.7rem;
   }
   
   .runningTime {
-    font-size: 1.2rem;
     color: #666;
   }
   
   .synopsis {
-    font-size: 1rem;
-    margin-bottom: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
     line-height: 1.6;
     background-color: rgba(0, 0, 0, 0.319);
-    padding: 8px;
+    padding: 4px;
+    width: 90%;
   }
   
   .castSection {
-    margin-top: 20px;
+    width: 90%;
   }
   
   .castList {
+    margin-top: 8px;
+    display: flex;
+    gap: 20px;
     list-style: none;
-    padding: 0;
     display: flex;
     flex-wrap: wrap;
+    row-gap: 10px;
   }
   
   .castList li {
-    margin-right: 15px;
-    font-size: 1rem;
+    font-size: 0.8rem;
+    background-color: #313131;
+    color: #9d9d9d;
+    padding:4px;
   }
+
+  .btn{
+    text-align: center;
+    padding: 8px;
+    margin-top: 16px;
+    width: 120px;
+    background-color: rgb(240, 71, 71);
+    border-radius: 4px;
+  }
+
+  .btn:hover {
+    transform: scale(1.02); 
+  }
+  
   

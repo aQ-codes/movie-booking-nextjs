@@ -1,34 +1,43 @@
-
 import React from "react";
 import Head from "next/head";
-import { useRouter } from "next/navigation";
+import { useSession, signIn } from "next-auth/react";
 import AuthLayout from "@/layouts/Auth/AuthLayout";
-import { signIn, signOut } from "next-auth/react";
-
+import VerifyEmail from "../../VerifyEmail/VerifyEmail"; // Separate component for the authenticated user view
 
 interface UserLoginBoxProps {
   onClose: () => void;
 }
 
 const UserLoginBox: React.FC<UserLoginBoxProps> = ({ onClose }) => {
-  const router = useRouter();
+  const { data: session, status } = useSession();
 
   const handleGoogleLogin = () => {
-    signIn('google',{callbackUrl:"http://localhost:3000"})
+    signIn('google', { callbackUrl: "http://localhost:3000" });
   };
+
+  if (status === "loading") {
+    return <p>Loading...</p>;
+  }
 
   return (
     <AuthLayout onClose={onClose}>
       <Head>
         <title>Viewbliss | Login</title>
       </Head>
-      <button
-        type="button"
-        className="login-with-google-btn"
-        onClick={handleGoogleLogin}
-      >
-        Sign in with Google
-      </button>
+
+      {session ? (
+        // If user is authenticated, show AuthenticatedView
+        <VerifyEmail userEmail={session.user?.email || ""} />
+      ) : (
+        // If not authenticated, show Google Sign-In button
+        <button
+          type="button"
+          className="login-with-google-btn"
+          onClick={handleGoogleLogin}
+        >
+          Sign in with Google
+        </button>
+      )}
     </AuthLayout>
   );
 };

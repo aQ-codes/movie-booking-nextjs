@@ -30,21 +30,32 @@ export const getAllShows = async () => {
   }
 };
 
-// Get a show by ID
-export const getShowById = async (id) => {
+// Fetch all details of a specific show by showId
+export const getShowDetails = async (showId) => {
   try {
-    return await Show.findById(id)
-      .populate('movie')
-      .populate('screen')
-      .populate({
-        path: 'screen',
-        populate: {
-          path: 'cinemas',
-        },
-      }); 
+      // Find the show by ID and populate related fields
+      const showDetails = await Show.findById(showId)
+          .populate({
+              path: 'movieId', // Populate movie details
+              select: 'title genres runningTime cast synopsis poster status'
+          })
+          .populate({
+              path: 'screenId', // Populate screen details
+              select: 'screenNumber screenType sections seatArrangement',
+              populate: {
+                  path: 'cinemas', // Populate cinema details inside screen
+                  select: 'name location'
+              }
+          })
+          .populate({
+              path: 'prices.sectionId', // Populate section details
+              select: 'sectionName sectionNumber'
+          });
+      
+      return showDetails;
   } catch (error) {
-    console.error(error);
-    throw new Error('Error fetching show from the database');
+      console.error('Error fetching show details:', error);
+      throw new Error('Error fetching show details');
   }
 };
 
@@ -127,3 +138,32 @@ export const getActiveDatesForMovie = async (movieId) => {
     throw new Error('Could not fetch active dates');
   }
 };
+
+// Get all active shows for a cinema, movie, and date
+export const getShowsForCinemas = async (movieId, date, cinemasId) => {
+  // Fetch all active shows for the given movie, cinema, and date, and populate the screen details
+  console.log(date,"entered repository")
+  const shows = await Show.find({
+    movieId,
+    date,
+    status: 'active',
+  })
+    .populate({
+      path: 'screenId',
+      match: { cinemas: cinemasId }, // Only fetch shows for screens in this cinema
+      select: '_id screenNumber screenType', // Select only the relevant screen details
+    })
+    .select('_id time screenId'); // Select only show ID, time, and screenId
+
+    console.log(shows)
+
+  // Map the results to include only necessary information
+  return shows.map(show => ({
+    showId: show._id,
+    time: show.time,
+    screenId: show.screenId._id,
+    screenNumber: show.screenId.screenNumber,
+    screenType: show.screenId.screenType,
+  }));
+};
+

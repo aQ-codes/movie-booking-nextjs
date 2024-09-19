@@ -2,9 +2,6 @@ import { getScreensByCinemasId } from "../repositories/screenRepository.js";
 
 export const getScreensByCinemasIdController = async (req, res) => {
   try {
-    console.log('Entered getScreensByCinemasIdController controller');
-    console.log('req.params:', req.params);  // Log the entire req.params object
-
     const { cinemasId } = req.params; // Extract cinemasId from request parameters
     console.log('Cinemas ID:', cinemasId);  // Log cinemasId to verify it's being received
 
@@ -21,3 +18,5 @@ export const getScreensByCinemasIdController = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchCinemasForMovieAndDate } from '../../../../requests/axiosRequests';
 // import ShowTimes from './ShowTimes';
 import styles from './ShowCinemas.module.css'; 
+import ShowTimes from '../ShowTimes/ShowTimes';
 
 interface Cinemas {
   _id: string;
@@ -32,7 +33,7 @@ const ShowCinemas: React.FC<CinemasProps> = ({ movieId, selectedDate }) => {
     
     fetchCinemas();
   }, [movieId, selectedDate]);
-
+   
   if (error) {
     return <p>{error}</p>;
   }
@@ -45,9 +46,12 @@ const ShowCinemas: React.FC<CinemasProps> = ({ movieId, selectedDate }) => {
     <div className={styles.cinemaContainer}>
       {cinemas.map((cinema) => (
         <div key={cinema._id} className={styles.cinemaCard}>
-          <h3>{cinema.name}</h3>
-          <p>{cinema.location}</p>
-          {/* <ShowTimes movieId={movieId} cinemaId={cinema._id} selectedDate={selectedDate} /> */}
+          <div className={styles.details}>
+            <h3>{cinema.name} ,</h3>
+            <p> {cinema.location}</p>
+          </div>
+         
+          <ShowTimes movieId={movieId} cinemaId={cinema._id} selectedDate={selectedDate} />
         </div>
       ))}
     </div>
