@@ -1,0 +1,29 @@
+.seatCell {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--primary);
+  color: white;
+  margin: 4px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 9px;
+}
+
+.seatCell:hover {
+  background-color: var(--primary);
+}
+
+.nonSeat {
+  background-color: transparent;
+  cursor: not-allowed;
+  color: transparent;
+  border: none;
+}
+
+.nonSeat:hover{
+  background-color: transparent;
+}
+
+.selected {
+  background-color: var(--primary);
+}

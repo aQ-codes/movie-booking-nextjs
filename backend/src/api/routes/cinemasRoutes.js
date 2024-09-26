@@ -10,12 +10,6 @@ const router = express.Router();
 // add a new cinemas
 router.post('/add', validateCinemas,addCinemasController);
 
-//edit a cinemas
-// router.put('/cinemas/:id/edit', editcinemas);
-
-//delete a cinemas
-// router.delete('/cinemas/:id/delete', deletecinemas);
-
 //get a particular cinemas detail
 router.get('/cinemas/:id', getCinemasByIdController);
 

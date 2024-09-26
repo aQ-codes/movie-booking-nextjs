@@ -1,0 +1,61 @@
+/* ShowTimes.module.css */
+.showTimesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+ }
+  
+.showCard {
+    /* background-color: #fff; */
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 4px 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .showCard p:first-child {
+    font-size: 12px;
+    font-weight: bold;
+    color: #129cff;
+    font-weight: 600;
+  }
+  
+  .showCard p:last-child {
+    font-size: 11px;
+    color: #ffffff;
+    font-weight: 600;
+
+  }
+  
+  
+  .showCard:hover {
+    transform: scale(1.01);
+    border-color: #20e65b;
+  }
+
+  .showCard:hover p:first-child {
+    color: #20e65b; 
+}
+
+  .showCard p:first-child:hover{
+    color: #20e65b;
+
+  }
+  
+  .selected {
+    border-color: #20e65b;
+    /* background-color: #0070f3; */
+  }
+
+  .selected p:first-child{
+    color: #20e65b;
+    /* background-color: #0070f3; */
+  }
+  
+  
+
+  

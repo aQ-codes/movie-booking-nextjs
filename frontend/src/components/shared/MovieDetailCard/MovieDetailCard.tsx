@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { getMovieDetails } from '@/axiosRequests/axiosRequests';
-import Image from 'next/image'; // Import Next.js Image component
+import { getMovieDetails } from '@/services/api/movieService'; 
+import Image from 'next/image'; 
 import styles from './MovieDetailCard.module.css';
-import Link from 'next/link';
 
 interface MovieDetailProps {
   movieId: string;
+  onBookNowClick: () => void; // Accept the prop
 }
 
 interface Movie {
@@ -18,7 +18,7 @@ interface Movie {
   genres: string[];
 }
 
-const MovieDetail: React.FC<MovieDetailProps> = ({ movieId }) => {
+const MovieDetail: React.FC<MovieDetailProps> = ({ movieId, onBookNowClick }) => {
   const [movie, setMovie] = useState<Movie | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -48,10 +48,10 @@ const MovieDetail: React.FC<MovieDetailProps> = ({ movieId }) => {
           <Image 
             src={movie.poster}
             alt={`${movie?.title} poster`}
-            width={300} // Set the desired width
-            height={450} // Set the desired height
+            width={240}
+            height={320}
             className={styles.poster}
-            layout="intrinsic" // Use 'intrinsic' for maintaining aspect ratio
+            layout="intrinsic"
           />
         )}
       </div>
@@ -69,16 +69,15 @@ const MovieDetail: React.FC<MovieDetailProps> = ({ movieId }) => {
         </div>
         <p className={styles.synopsis}>{movie?.synopsis}</p>
         <div className={styles.castSection}>
-          <h3>Cast:</h3>
           <ul className={styles.castList}>
             {movie?.cast.map((actor, index) => (
               <li key={index}>{actor}</li>
             ))}
           </ul>
         </div>
-        <Link href="#" className={styles.btn}>
-            Book Now
-        </Link>
+        <button onClick={onBookNowClick} className={styles.btn}> {/* Use the passed function */}
+          Show Times
+        </button>
       </div>
     </div>
   );

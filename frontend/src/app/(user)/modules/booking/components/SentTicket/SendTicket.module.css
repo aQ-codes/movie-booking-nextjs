@@ -1,0 +1,92 @@
+/* SendTicket.module.css */
+.sendTicket h1{
+    color: rgb(35, 170, 215);
+    text-align: center;
+    padding: 32px;
+    font-size: 20px;
+}
+
+.sendTicket h2{
+    color: rgb(145, 145, 145);
+    text-align: center;
+    font-size: 14px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 50px auto;
+    border: 1px solid rgba(35, 170, 215, 0.496);
+  }
+  
+  .container  h3 {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #999898;
+  }
+  
+ .container form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+ .container input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #878383;
+    border-radius: 5px;
+    margin-bottom: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    background-color: black;
+    color: rgb(62, 250, 168);
+  }
+  
+ .container input[type="text"]:focus {
+    border-color: #0070f3;
+    outline: none;
+  }
+
+  .container input[type="text"]::placeholder {
+    color: #999; /* Placeholder text color */
+    font-style: italic; /* Italic style for placeholder */
+    opacity: 0.5; /* Make it fully opaque */
+    font-size: 13px;
+
+  }
+  
+.container  button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+ .container button:hover {
+    background-color: #005bb5;
+  }
+  
+ .container .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: center;
+  }
+  
+  .success {
+    color: green; /* Change to your desired success color */
+    margin-top: 10px; /* Add spacing */
+  }
+  

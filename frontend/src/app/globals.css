@@ -29,8 +29,6 @@
   text-decoration: none;
 }
 
-
-
 :root{
   --primary:#057cd7;
   --black : #000000;
@@ -104,6 +102,13 @@
   background-color: rgb(40, 167, 69);
 }
 
+.btn.pay{
+  background-color: rgb(202, 3, 3);
+}
+
+.btn.dark{
+  background-color: rgb(54, 54, 54);
+}
 /* end of button styling  */
 
 /* branding  */
@@ -161,10 +166,13 @@
 }
 }
 
-.admin-main{
-  width: 100%;
-  padding:24px;
+.adminLayout .container{
   background-color: var(--color13);
+}
+
+.admin-main{
+  padding: 16px;
+  width: 100%;
 }
 
 .error{

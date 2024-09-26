@@ -2,6 +2,8 @@ import express from "express";
 import cors from 'cors';
 import { connect } from "./config/dbConfig.js";
 import initializeRoutes from './api/routes/index.js'; 
+import seedAdmin from "./api/seeders/seedAdmin.js";
+
 
 const app = express();
 const PORT = 8080;
@@ -14,9 +16,8 @@ app.use(express.json()); //for parsing
 // Connect to MongoDB
 connect();
 
-app.get("/api/home", (req, res) =>{
-    res.json({message: "Hello World!"});
-})
+// Seed admin user
+await seedAdmin();
 
 // Initialize all routes
 initializeRoutes(app);

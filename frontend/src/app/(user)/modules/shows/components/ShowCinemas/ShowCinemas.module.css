@@ -1,0 +1,32 @@
+/* Cinemas.module.css */
+.cinemasContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  .cinemaCard {
+    display: flex;
+    gap: 80px;
+    margin-bottom: 20px;
+    border-top: 1px solid #cccccc41;  
+    border-bottom: 1px solid #cccccc41; 
+    padding: 15px;
+    color: rgb(255, 255, 255);
+  }
+  
+  .details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .details h3{
+    font-weight: 600;
+  }
+
+  .details p{
+    font-weight: 600;
+    font-size: 14px;
+    color: #a6a4a4;
+  }
+  

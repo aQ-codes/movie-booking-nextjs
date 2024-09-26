@@ -21,7 +21,12 @@
     "paths": {
       "@/*": ["*"],
       "@/components/*": ["components/*"],
-      "@/admin/modules/*": ["app/admin/(modules)/*"]
+      "@/services/*": ["services/*"],
+      "@/utils/*": ["utils/*"],
+      "@/admin/*": ["app/admin/*"],
+      "@/user/*": ["app/(user)/*"],
+      "@/admin/modules/*": ["app/admin/modules/*"],
+      "@/user/modules/*": ["app/(user)/modules/*"],
     },
     "types": ["next-auth"],  // Ensure 'next-auth' is listed to include its types
     "typeRoots": ["./src/types", "./node_modules/@types"]  // Correct typeRoots path

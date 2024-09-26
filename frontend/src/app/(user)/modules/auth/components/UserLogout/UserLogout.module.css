@@ -1,0 +1,25 @@
+/* components/LogoutButton.module.css */
+.logoutcontainer{
+display: flex;
+justify-content: flex-end;
+}
+.logoutButton {
+  display: flex;
+  gap: 8px;
+
+    align-items: center;
+    justify-content: center;
+    background-color: #27272990; /* Red background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 8px 10px; /* Padding */
+    font-size: 13px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .logoutButton:hover {
+    background-color: #292828; /* Darker red on hover */
+  }
+  

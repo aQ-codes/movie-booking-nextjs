@@ -1,0 +1,57 @@
+.nowshowing .header{
+    padding: 0px 40px;
+    margin-top: 8px;
+}
+
+.nowshowing h1{
+    color: rgb(226, 226, 226);
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(42, 108, 223, 0.705);
+    font-size: 13px;
+
+}
+
+.moviesContainer{
+    padding: 40px;
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+
+.genreFilter {
+
+    padding: 32px 40px 0px 40px;
+  }
+  
+  .genreCards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    /* margin-bottom: 20px; */
+  }
+  
+  .genreCard {
+    padding: 8px 12px;
+    background-color: #454343;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 14px;
+    color: white;
+  }
+  
+  .genreCard:hover {
+    background-color: #2e2d2d;
+  }
+  
+  .genreCard.selected {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .moviesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+  }
+  

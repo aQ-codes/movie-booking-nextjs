@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-      domains: ['m.media-amazon.com'], // Add the external domain
+      domains: ['m.media-amazon.com','lh3.googleusercontent.com','assets-in.bmscdn.com'], // Add the external domain
     },
 };
 

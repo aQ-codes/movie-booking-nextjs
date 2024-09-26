@@ -1,4 +1,4 @@
-import axiosInstance from "@/utils/axiosConfig";
+import {axiosInstance} from "@/config/axiosConfig";
 
 // Function to search movies by name
 export const searchMovies = async (searchTerm: string) => {

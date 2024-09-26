@@ -49,7 +49,7 @@ export const getShowDetails = async (showId) => {
           })
           .populate({
               path: 'prices.sectionId', // Populate section details
-              select: 'sectionName sectionNumber'
+              select: 'sectionName sectionNumber '
           });
       
       return showDetails;
@@ -74,16 +74,6 @@ export const updateShow = async (id, showData) => {
   } catch (error) {
     console.error(error);
     throw new Error('Error updating show in the database');
-  }
-};
-
-// Delete a show by ID
-export const deleteShow = async (id) => {
-  try {
-    return await Show.findByIdAndDelete(id);
-  } catch (error) {
-    console.error(error);
-    throw new Error('Error deleting show from the database');
   }
 };
 
@@ -167,3 +157,49 @@ export const getShowsForCinemas = async (movieId, date, cinemasId) => {
   }));
 };
 
+
+
+export const getShowPricesWithSections = async (showId) => {
+  try {
+    // Find the show by ID
+    const showDetails = await Show.findById(showId)
+      .populate({
+        path: 'screenId', // Populate screen details
+        select: 'sections', // Select only sections from screen details
+      })
+      .lean(); // Use lean to get plain JavaScript objects instead of Mongoose Documents
+
+    if (!showDetails) {
+      throw new Error('Show not found');
+    }
+
+    // Map over show prices and merge section details
+    const pricesWithSections = showDetails.prices.map((priceObj) => {
+      const sectionDetails = showDetails.screenId.sections.find(
+        (section) => section._id.toString() === priceObj.sectionId.toString()
+      );
+
+      if (sectionDetails) {
+        return {
+          price: priceObj.price,
+          sectionId: priceObj.sectionId,
+          sectionName: sectionDetails.sectionName,
+          sectionNumber: sectionDetails.sectionNumber,
+        };
+      } else {
+        // If section not found for some reason
+        return {
+          price: priceObj.price,
+          sectionId: priceObj.sectionId,
+          sectionName: 'Unknown',
+          sectionNumber: 'Unknown',
+        };
+      }
+    });
+
+    return pricesWithSections;
+  } catch (error) {
+    console.error('Error fetching show prices with sections:', error);
+    throw new Error('Error fetching show prices with sections');
+  }
+};

@@ -1,18 +1,17 @@
+// app/layout.tsx (Server Component)
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-//custom imports
-import { UserProvider } from '@auth0/nextjs-auth0/client';
-
-
 
 const inter = Inter({ subsets: ["latin"] });
 
+// Metadata export for Server Components
 export const metadata: Metadata = {
-  title: "ViewBliss", 
+  title: "ViewBliss",
   description: "Movie Show Booking",
 };
 
+// Server Component for layout
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -20,11 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
- 
-        <body className={inter.className}>
-            {children}    
-        </body>
- 
+      <body className={inter.className}>
+        {/* <Provider store={store}> */}
+          {children}
+        {/* </Provider> */}
+      </body>
     </html>
   );
 }
+

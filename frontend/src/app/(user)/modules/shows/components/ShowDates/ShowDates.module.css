@@ -1,0 +1,61 @@
+.showDatesContainer {
+    display: flex;
+    gap: 10px;
+    overflow-x: scroll;
+    padding: 16px;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    font-family: 'Arial', sans-serif;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+  }
+  
+  .dayName {
+    font-size: 10px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .day {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .month {
+    font-size: 14px;
+    color: #888;
+  }
+  
+
+  .selected {
+    background-color: #0089b6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+  }
+
+  .selected .month{
+    color: #fff;
+  }
+
+  .selected .day{
+    color: #fff;
+  }
+
+  .selected .dayName{
+    color: #fff;
+  }

@@ -1,7 +1,7 @@
 // controllers/cinemaController.js
 
 import { validationResult } from 'express-validator';
-import { addCinemas } from '../repositories/cinemasRepository.js';
+import { addCinemas, deleteCinemas, updateCinemas } from '../repositories/cinemasRepository.js';
 
 // Controller to add a cinema
 export const addCinemasController = async (req, res) => {
@@ -20,28 +20,28 @@ export const addCinemasController = async (req, res) => {
 };
 
 
-// // Controller to update a cinema by ID
-// export const updateCinemaController = async (req, res) => {
-//   try {
-//     const cinema = await updateCinema(req.params.id, req.body);
-//     if (!cinema) {
-//       return res.status(404).json({ message: 'Cinema not found' }); // Handle case where cinema is not found
-//     }
-//     res.status(200).json({ message: 'Cinema updated successfully', cinema }); // Return success response
-//   } catch (error) {
-//     res.status(500).json({ message: error.message }); // Handle server errors
-//   }
-// };
+// Controller to update a cinema by ID
+export const updateCinemaController = async (req, res) => {
+  try {
+    const cinema = await updateCinemas(req.params.id, req.body);
+    if (!cinema) {
+      return res.status(404).json({ message: 'Cinema not found' }); // Handle case where cinema is not found
+    }
+    res.status(200).json({ message: 'Cinema updated successfully', cinema }); // Return success response
+  } catch (error) {
+    res.status(500).json({ message: error.message }); // Handle server errors
+  }
+};
 
-// // Controller to delete a cinema by ID
-// export const deleteCinemaController = async (req, res) => {
-//   try {
-//     const cinema = await deleteCinema(req.params.id);
-//     if (!cinema) {
-//       return res.status(404).json({ message: 'Cinema not found' }); // Handle case where cinema is not found
-//     }
-//     res.status(200).json({ message: 'Cinema deleted successfully' }); // Return success response
-//   } catch (error) {
-//     res.status(500).json({ message: error.message }); // Handle server errors
-//   }
-// };
+// Controller to delete a cinema by ID
+export const deleteCinemaController = async (req, res) => {
+  try {
+    const cinema = await deleteCinemas(req.params.id);
+    if (!cinema) {
+      return res.status(404).json({ message: 'Cinema not found' }); // Handle case where cinema is not found
+    }
+    res.status(200).json({ message: 'Cinema deleted successfully' }); // Return success response
+  } catch (error) {
+    res.status(500).json({ message: error.message }); // Handle server errors
+  }
+};

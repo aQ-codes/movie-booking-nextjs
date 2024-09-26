@@ -31,3 +31,7 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ children, onClose }) => {
 };
 
 export default AuthLayout;
+
+
+
+

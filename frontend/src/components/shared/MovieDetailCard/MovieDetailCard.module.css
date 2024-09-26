@@ -11,9 +11,8 @@
   
   .poster {
     border-radius: 10px;
-    width: 360px;
-    /* min-width: 300px; */
-    /* flex: 0 1 auto; */
+    width: 240px;
+    height: 320px;
   }
   
   .detailsSection {

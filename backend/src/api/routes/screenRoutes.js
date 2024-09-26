@@ -14,9 +14,6 @@ router.post('/add', validateScreen,addScreenController);
 //edit a screen
 router.put('/edit/:screenId',validateScreen, updateScreenController);
 
-//delete a cinemas
-// router.delete('/cinemas/:id/delete', deletecinemas);
-
 //get a particular screen detail
 router.get('/:screenId', getScreenByIdController);
 

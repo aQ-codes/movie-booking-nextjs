@@ -1,13 +1,17 @@
 /* header */
 .userLayout{
   background: rgb(0,0,0);
-  background: linear-gradient(130deg, rgba(0,0,0,1) 22%, rgba(0,12,24,1) 48%, rgba(0,0,0,1) 75%);
+
 }
 
-.userLayout .header{
-  background-color: var(--black);
-  padding: 24px 80px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.userLayout header.header{
+  padding: 16px 80px;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  border-bottom: 1px solid #0876ca72;
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,9,1) 43%, rgba(0,12,25,1) 100%); 
+  
 }
   
 
@@ -16,7 +20,6 @@
   min-height: 100vh;
   background: rgb(0,0,0);
   background: linear-gradient(0deg, rgba(0,0,0,1) 18%, rgba(0,7,15,1) 50%, rgba(0,0,0,1) 77%);
-  /* background-color: white; */
 }
 
 .userLayout .footer{

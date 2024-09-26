@@ -1,0 +1,181 @@
+.seatsection{
+    color: #f8f9fa;
+    position: relative;
+}
+
+.info{
+    background-color: rgba(1, 75, 247, 0.292);
+    padding: 8px;
+    display: flex;
+    gap: 40px;
+    border-radius: 8px;
+}
+.showdetails{
+    font-size: 13px;
+    padding: 16px;
+}
+
+.showdetails .movie{
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.showdetails .cinemasdatetime{
+    display: flex;
+    gap: 8px;
+    font-weight: 600;
+}
+
+.cinemas{
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: #dfdfdf;
+
+}
+
+.cinemas h2{
+    margin: auto;
+    /* border: 1px solid #ffffff89; */
+    font-weight: 600;
+    padding: 8px;
+    background-color: rgba(0, 132, 255, 0.555);
+    border-radius: 4px;
+
+}
+
+.indicators{
+    background-color: rgba(30, 31, 31, 0.366);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 24px;
+    border-radius: 8px;
+
+}
+
+.indicators span{
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.indicators label{
+   margin-right: 24px;
+}
+
+
+.indicators span.available{
+    border: 1px solid var(--primary);
+}
+
+.indicators span.selected{
+    background-color: var(--primary);
+}
+
+.indicators span.sold{
+    background-color: #6A6A6D;
+}
+
+.sectionprices{
+    background-color: rgba(30, 31, 31, 0.366);
+    font-size: 12px;
+    display: flex;
+    gap: 8px;
+    padding: 0px 16px;
+    border-radius: 8px;
+
+}
+
+.sectionprice{
+    border: 1px solid rgba(255, 255, 0, 0.527);
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.screenContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .screen {
+    width: 80%;
+    height: 40px;
+    /* background-color: #ddd; */
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #333;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .screen .screenicon{
+    width: 300px;
+    height: 40px;
+    opacity: 0.7;
+  }
+  
+  .screenText {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555; /* Slightly darker color */
+    font-style: italic;
+  }
+
+  .totalPrice{
+    padding: 16px;
+    display:flex;
+    justify-content: center;
+    gap: 16px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    left: 0;        
+    right: 0; 
+    border-radius: 24px;
+  }
+
+  .totalPrice p{
+    background-color: rgba(255, 0, 0, 0.634);
+    padding: 16px;
+}
+  
+
+
+.checkout{
+    background-color: rgb(26, 26, 26);
+    border-radius: 8px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    display: flex;  
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    font-weight: 600;
+}
+
+.checkoutactive{
+    background-color: rgba(6, 140, 6, 0.786);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    color: #dfdfdf;
+   
+}
+
+.checkoutactive:hover{
+    transform: scale(1.02); 
+    background-color: rgb(8, 177, 8);
+}

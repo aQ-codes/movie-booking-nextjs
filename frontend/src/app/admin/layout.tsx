@@ -1,5 +1,8 @@
+"use client"
 import React, { ReactNode } from 'react';
-import AdminLayout from './layouts/AdminLayout'; // Import the AdminLayout component
+import AdminLayout from './layouts/AdminLayout'; 
+import { store } from "@/redux/store/store"; 
+import { Provider } from "react-redux";
 
 
 interface AppLayoutProps {
@@ -8,9 +11,12 @@ interface AppLayoutProps {
 
 const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
   return (
+    <Provider store={store}>
       <AdminLayout>
         {children} 
       </AdminLayout>
+      </Provider>
+
   );
 };
 
